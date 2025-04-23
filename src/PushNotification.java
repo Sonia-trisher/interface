@@ -1,7 +1,21 @@
 public class PushNotification implements NotificationService{
+    private String deviceId;
+    private String defaultPriority;
+
+    public PushNotification(String deviceId) {
+        this.deviceId = deviceId;
+
+    }
+
+    @Override
+    public void setDefaultPriority(String priority) {
+        this.defaultPriority = priority;
+        System.out.println("Default priority for PushNotification set to: " + defaultPriority);
+
+    }
     @Override
     public void sendNotification(String message) {
-        System.out.println("Sending Push Notification:" + message);
+        System.out.println("Sending Push Notification to  device Id["+ deviceId +"]:" + message);
 
     }
 }
